@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Complex Test KML</name>
+    <description>A more complex KML file with multiple feature types</description>
+    
+    <Style id="redLineStyle">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    
+    <Style id="greenPolyStyle">
+      <LineStyle>
+        <color>ff00ff00</color>
+        <width>2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f00ff00</color>
+      </PolyStyle>
+    </Style>
+    
+    <Style id="blueIconStyle">
+      <IconStyle>
+        <color>ffff0000</color>
+        <scale>1.2</scale>
+      </IconStyle>
+    </Style>
+    
+    <!-- Points -->
+    <Folder>
+      <name>Points of Interest</name>
+      <Placemark>
+        <name>New York City</name>
+        <description>The Big Apple</description>
+        <styleUrl>#blueIconStyle</styleUrl>
+        <Point>
+          <coordinates>-74.0060,40.7128,0</coordinates>
+        </Point>
+      </Placemark>
+      
+      <Placemark>
+        <name>Los Angeles</name>
+        <description>The City of Angels</description>
+        <styleUrl>#blueIconStyle</styleUrl>
+        <Point>
+          <coordinates>-118.2437,34.0522,0</coordinates>
+        </Point>
+      </Placemark>
+      
+      <Placemark>
+        <name>Chicago</name>
+        <description>The Windy City</description>
+        <styleUrl>#blueIconStyle</styleUrl>
+        <Point>
+          <coordinates>-87.6298,41.8781,0</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    
+    <!-- Lines -->
+    <Folder>
+      <name>Routes</name>
+      <Placemark>
+        <name>East Coast Route</name>
+        <description>A route along the East Coast</description>
+        <styleUrl>#redLineStyle</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -74.0060,40.7128,0
+            -75.1652,39.9526,0
+            -76.6122,39.2904,0
+            -77.0369,38.9072,0
+            -78.6382,35.7796,0
+            -80.1918,25.7617,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      
+      <Placemark>
+        <name>Cross-Country Route</name>
+        <description>A route across the United States</description>
+        <styleUrl>#redLineStyle</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -74.0060,40.7128,0
+            -87.6298,41.8781,0
+            -93.2650,44.9778,0
+            -104.9903,39.7392,0
+            -111.8910,40.7608,0
+            -118.2437,34.0522,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+    
+    <!-- Polygons -->
+    <Folder>
+      <name>Regions</name>
+      <Placemark>
+        <name>Northeast Region</name>
+        <description>The Northeastern United States</description>
+        <styleUrl>#greenPolyStyle</styleUrl>
+        <Polygon>
+          <tessellate>1</tessellate>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                -74.0060,40.7128,0
+                -71.0589,42.3601,0
+                -69.7787,44.1939,0
+                -73.7562,42.6526,0
+                -75.1652,39.9526,0
+                -74.0060,40.7128,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      
+      <Placemark>
+        <name>Great Lakes Region</name>
+        <description>The Great Lakes area</description>
+        <styleUrl>#greenPolyStyle</styleUrl>
+        <Polygon>
+          <tessellate>1</tessellate>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                -87.6298,41.8781,0
+                -82.9988,42.3314,0
+                -78.8784,42.8864,0
+                -79.3832,43.6532,0
+                -83.0458,42.3314,0
+                -87.6298,41.8781,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+    </Folder>
+    
+    <!-- Multi-geometry -->
+    <Placemark>
+      <name>West Coast Cities</name>
+      <description>Major cities on the West Coast</description>
+      <styleUrl>#blueIconStyle</styleUrl>
+      <MultiGeometry>
+        <Point>
+          <coordinates>-118.2437,34.0522,0</coordinates>
+        </Point>
+        <Point>
+          <coordinates>-122.4194,37.7749,0</coordinates>
+        </Point>
+        <Point>
+          <coordinates>-122.3321,47.6062,0</coordinates>
+        </Point>
+      </MultiGeometry>
+    </Placemark>
+    
+    <!-- MultiLineString -->
+    <Placemark>
+      <name>River Systems</name>
+      <description>Major river systems</description>
+      <styleUrl>#redLineStyle</styleUrl>
+      <MultiGeometry>
+        <LineString>
+          <coordinates>
+            -90.1994,29.9511,0
+            -91.1565,30.4515,0
+            -91.3547,31.3174,0
+            -90.1218,32.2988,0
+            -90.0715,35.1495,0
+          </coordinates>
+        </LineString>
+        <LineString>
+          <coordinates>
+            -122.6765,45.5231,0
+            -121.1737,45.7146,0
+            -119.0129,46.2368,0
+            -117.6804,45.8246,0
+          </coordinates>
+        </LineString>
+      </MultiGeometry>
+    </Placemark>
+  </Document>
+</kml>
